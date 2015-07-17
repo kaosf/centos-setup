@@ -1,69 +1,29 @@
-# ref. http://www.public-t.info/note/sakura_vps-initialization/
+GROUPNAME=
+USERNAME=
+yum -y update
+groupadd $GROUPNAME
+useradd $USERNAME -g $GROUPNAME
 
-vim /etc/sysctl.conf
-#### diff
-#  kernel.shmall = 4294967296
-#  
-# -
-# +kernel.panic = 5
-#  
-#  # Do not accept RA
-
-/sbin/sysctl -p
-/sbin/sysctl -n 'kernel.panic'
-#=> 5
-
-mkdir -p /etc/skel/Maildir/{new,cur,tmp}
-chmod -R 700 /etc/skel/Maildir
-
-useradd <username>
-passwd <username>
-usermod -G wheel <username>
+su - $USERNAME
+ssh-keygen
+echo 'ssh-rsa AAAAB3... ' > .ssh/autholized_keys
+chmod 600 .ssh/autholized_keys
+exit
 
 visudo
-#### diff
-#  ## Allows people in group wheel to run all commands
-# -# %wheel  ALL=(ALL)       ALL
-# +# %wheel  ALL=(ALL)       ALL
-#  
+# + username ALL=(ALL) ALL
+# or
+# + username ALL=(ALL) NOPASSWD: ALL
 
-#### diff
-#  
-# +
-# +# syslog facility
-# +Defaults syslog=local3
-#  [EOF]
+vi /etc/ssh/sshd_config
+# - #PermitRootLogin yes
+# + PermitRootLogin no
+#   ...
+# - #passwordAuthentication yes
+# + passwordAuthentication no
+#   ...
+/etc/init.d/sshd restart
+exit
+#### root operations end
 
-vim /etc/rsyslog.conf
-#### diff
-#  # Save boot messages also to boot.log
-#  local7.*                                                /var/log/boot.log
-#  
-# +# sudo log
-# +local3.*                                                /var/log/sudo
-#  
-#  
-#  # ### begin forwarding rule ###
-#  #
-
-touch /var/log/sudo
-chmod 600 /var/log/sudo
-
-vim /etc/logrotate.d/syslog
-#### diff
-#  /var/log/secure
-#  /var/log/spooler
-# +/var/log/sudo
-#  {
-#        sharedscripts
-
-reboot
-
-## login as <username>
-
-sudo vim /etc/ssh/sshd_config
-# -# PermitRootLogin yes
-# +PermitRootLogin no
-sudo service sshd restart
-
-sudo yum install -y zsh tmux git tig
+sudo yum -y install wget make gcc-c++
