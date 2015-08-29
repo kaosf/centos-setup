@@ -12,8 +12,9 @@ git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 git clone git://github.com/kaosf/ka-vim-snippets.git $HOME/.vim/ka-vim-snippets
 mkdir -p $HOME/local/src
 cd $HOME/local/src
-git clone https://github.com/vim-jp/vim
+git clone https://github.com/vim/vim
 cd vim
+git checkout v7.4.838
 ./configure \
   --prefix=$HOME/local \
   --enable-perlinterp=yes \
