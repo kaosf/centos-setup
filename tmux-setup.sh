@@ -9,6 +9,7 @@ make
 sudo make install
 sudo ln -s /usr/local/lib/libevent-2.0.so.5 /usr/lib64/libevent-2.0.so.5
 
+sudo yum -y install ncurses-devel
 mkdir ~/local/src
 cd ~/local/src
 wget http://downloads.sourceforge.net/tmux/tmux-2.0.tar.gz
