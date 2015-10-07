@@ -1,4 +1,5 @@
 #!/bin/bash
+if [ $# -lt 1 ]; then exit 1; fi
 NAME=$1
 groupadd $NAME
 useradd $NAME -g $NAME -s /bin/bash -d /home/$NAME
