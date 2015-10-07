@@ -1,5 +1,6 @@
 sudo yum -y install \
-  curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils
+  curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc \
+  perl-ExtUtils perl-ExtUtils-MakeMaker
 curl -O https://www.kernel.org/pub/software/scm/git/git-2.3.7.tar.gz
 tar xf git-2.3.7.tar.gz
 cd git-2.3.7
