@@ -10,7 +10,7 @@ cd -
 sudo mv libevent-2.0.21-stable /usr/local/src
 rm libevent-2.0.21-stable.tar.gz
 
-wget http://downloads.sourceforge.net/tmux/tmux-2.0.tar.gz
+wget https://github.com/tmux/tmux/releases/download/2.0/tmux-2.0.tar.gz
 tar xf tmux-2.0.tar.gz
 cd tmux-2.0
 ./configure
