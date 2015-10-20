@@ -10,14 +10,15 @@ cd -
 sudo mv libevent-2.0.21-stable /usr/local/src
 rm libevent-2.0.21-stable.tar.gz
 
-wget https://github.com/tmux/tmux/releases/download/2.0/tmux-2.0.tar.gz
-tar xf tmux-2.0.tar.gz
-cd tmux-2.0
+VERSION=2.1
+wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
+tar xf tmux-${VERSION}.tar.gz
+cd tmux-${VERSION}
 ./configure
 make
 sudo make install
 cd -
-sudo mv tmux-2.0 /usr/local/src
-rm tmux-2.0.tar.gz
+sudo mv tmux-${VERSION} /usr/local/src
+rm tmux-${VERSION}.tar.gz
 
 # ref. https://jtskarbek.wordpress.com/2013/03/22/tmux-compile-failure/
