@@ -3,15 +3,15 @@
 ## Usage
 
 ```sh
-curl https://raw.githubusercontent.com/kaosf/arch-setup/master/setup.sh | bash
-curl https://raw.githubusercontent.com/kaosf/arch-setup/master/git-setup.sh | bash
-curl https://raw.githubusercontent.com/kaosf/arch-setup/master/tmux-setup.sh | bash
-curl https://raw.githubusercontent.com/kaosf/arch-setup/master/zsh-setup.sh | bash
-curl https://raw.githubusercontent.com/kaosf/arch-setup/master/tig-setup.sh | bash
+curl https://raw.githubusercontent.com/kaosf/centos-setup/master/setup.sh | bash
+curl https://raw.githubusercontent.com/kaosf/centos-setup/master/git-setup.sh | bash
+curl https://raw.githubusercontent.com/kaosf/centos-setup/master/tmux-setup.sh | bash
+curl https://raw.githubusercontent.com/kaosf/centos-setup/master/zsh-setup.sh | bash
+curl https://raw.githubusercontent.com/kaosf/centos-setup/master/tig-setup.sh | bash
 ```
 
 ```sh
-wget https://raw.githubusercontent.com/kaosf/ubuntu-setup/master/unsecure-root-setup.sh -O - | bash -s $USERNAME
+wget https://raw.githubusercontent.com/kaosf/centos-setup/master/unsecure-root-setup.sh -O - | bash -s $USERNAME
 ```
 
 ## Versions
