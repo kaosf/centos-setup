@@ -10,6 +10,7 @@ cd -
 sudo mv libevent-2.0.21-stable /usr/local/src
 rm libevent-2.0.21-stable.tar.gz
 
+sudo yum -y install ncurses-devel
 VERSION=2.1
 wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
 tar xf tmux-${VERSION}.tar.gz
