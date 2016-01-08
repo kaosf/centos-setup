@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/kaosf/centos-setup/master/tig-setup.sh | 
 ```
 
 ```sh
-wget https://raw.githubusercontent.com/kaosf/centos-setup/master/unsecure-root-setup.sh -O - | bash -s $USERNAME
+curl https://raw.githubusercontent.com/kaosf/centos-setup/master/unsecure-root-setup.sh | bash -s $USERNAME
 ```
 
 ## Versions
