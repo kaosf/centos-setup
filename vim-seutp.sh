@@ -3,7 +3,7 @@ sudo yum -y install lua-devel python-devel ruby ruby-devel ncurses-devel libacl-
 cd /usr/local/src
 wget http://luajit.org/download/LuaJIT-2.0.4.tar.gz
 tar xzf LuaJIT-2.0.4.tar.gz
-cd LuaJIT-2.0.4.tar.gz
+cd LuaJIT-2.0.4
 make
 sudo make install
 
