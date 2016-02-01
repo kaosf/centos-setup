@@ -5,3 +5,5 @@ sudo yum -y groupinstall "Development Tools"
 sudo yum -y install pcre-devel xz-devel
 ./build.sh
 sudo make install
+cd ..
+sudo mv the_silver_searcher /usr/local/src
