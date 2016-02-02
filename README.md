@@ -17,6 +17,7 @@ curl https://raw.githubusercontent.com/kaosf/centos-setup/master/unsecure-root-s
 ## Versions
 
 * CentOS 6.7
+* CentOS 7
 
 ## License
 
