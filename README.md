@@ -8,6 +8,7 @@ curl https://raw.githubusercontent.com/kaosf/centos-setup/master/git-setup.sh | 
 curl https://raw.githubusercontent.com/kaosf/centos-setup/master/tmux-setup.sh | bash
 curl https://raw.githubusercontent.com/kaosf/centos-setup/master/zsh-setup.sh | bash
 curl https://raw.githubusercontent.com/kaosf/centos-setup/master/tig-setup.sh | bash
+curl https://raw.githubusercontent.com/kaosf/centos-setup/master/ag-setup.sh | bash
 ```
 
 ```sh
