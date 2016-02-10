@@ -6,7 +6,8 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> $HOME/.zshenv
 echo 'eval "$(rbenv init -)"' >> $HOME/.zshenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> $HOME/.bash_profile
 echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
-exec $SHELL -l
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 mkdir -p $HOME/.rbenv/plugins
 git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
 git clone https://github.com/ianheggie/rbenv-binstubs.git $HOME/.rbenv/plugins/rbenv-binstubs
