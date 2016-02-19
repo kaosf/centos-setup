@@ -1,4 +1,4 @@
-# CentOS Setup Memo
+# CentOS setup scripts
 
 ## Usage
 
