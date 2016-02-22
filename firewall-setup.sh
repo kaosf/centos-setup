@@ -1,5 +1,6 @@
 sudo firewall-cmd --permanent --add-service=ssh
 sudo firewall-cmd --permanent --add-port=60000-60010/udp # mosh
+sudo firewall-cmd --permanent --add-port=3000-3010/tcp # Rails
 sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
 sudo firewall-cmd --permanent --add-service=smtp
