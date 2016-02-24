@@ -15,5 +15,3 @@ export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/.gocode
 export PATH=$HOME/.gocode/bin:$PATH
 rm -f go${VERSION}.linux-amd64.tar.gz
-
-go get github.com/peco/peco/cmd/peco

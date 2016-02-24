@@ -9,6 +9,7 @@ curl https://raw.githubusercontent.com/kaosf/centos-setup/master/tmux-setup.sh |
 curl https://raw.githubusercontent.com/kaosf/centos-setup/master/zsh-setup.sh | bash
 curl https://raw.githubusercontent.com/kaosf/centos-setup/master/tig-setup.sh | bash
 curl https://raw.githubusercontent.com/kaosf/centos-setup/master/ag-setup.sh | bash
+curl https://raw.githubusercontent.com/kaosf/centos-setup/master/go-setup.sh | bash
 ```
 
 Run the following command as a root user, then a user which has the name of
