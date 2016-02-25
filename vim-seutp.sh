@@ -25,7 +25,8 @@ git checkout v7.4.838
   --enable-multibyte \
   --enable-fail-if-missing \
   --with-features=huge \
-  --with-luajit
+  --with-luajit \
+  --with-ruby-command=/usr/bin/ruby
 make
 make install
 
