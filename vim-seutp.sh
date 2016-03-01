@@ -8,8 +8,9 @@ cd LuaJIT-2.0.4
 make
 sudo make install
 
-[ -d $HOME/.vim/bundle ] || mkdir -p $HOME/.vim/bundle
-git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+if [ ! -d $HOME/.vim/dein ]; then
+  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | bash -s $HOME/.vim/dein
+fi
 git clone git://github.com/kaosf/ka-vim-snippets.git $HOME/.vim/ka-vim-snippets
 mkdir -p $HOME/local/src
 cd $HOME/local/src
