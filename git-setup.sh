@@ -1,3 +1,8 @@
+if [ `which git` = /usr/local/bin/git ]; then
+  echo "\"git\" is already installed."
+  exit 0
+fi
+
 sudo yum -y install \
   curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc \
   perl-ExtUtils perl-ExtUtils-MakeMaker
