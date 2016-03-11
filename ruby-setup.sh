@@ -1,18 +1,27 @@
 sudo yum -y update
 sudo yum -y groupinstall "Development Tools"
 sudo yum -y install openssl-devel zlib-devel readline-devel
-git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> $HOME/.zshenv
-echo 'eval "$(rbenv init -)"' >> $HOME/.zshenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> $HOME/.bash_profile
-echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-mkdir -p $HOME/.rbenv/plugins
-git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
-git clone https://github.com/ianheggie/rbenv-binstubs.git $HOME/.rbenv/plugins/rbenv-binstubs
-rbenv install 2.3.0
-rbenv global 2.3.0
+
+if [ ! `which ruby` = "$HOME/.rbenv/shims/ruby" ]; then
+  git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> $HOME/.zshenv
+  echo 'eval "$(rbenv init -)"' >> $HOME/.zshenv
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> $HOME/.bash_profile
+  echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  mkdir -p $HOME/.rbenv/plugins
+  git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
+  git clone https://github.com/ianheggie/rbenv-binstubs.git $HOME/.rbenv/plugins/rbenv-binstubs
+fi
+
+VERSION=2.3.0
+if [[ `ruby -v` =~ "ruby ${VERSION}" ]]; then
+  echo "\"ruby\" is already installed."
+  exit 0
+fi
+rbenv install $VERSION
+rbenv global $VERSION
 gem install bundler --no-ri --no-rdoc
 rbenv rehash
 
